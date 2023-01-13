@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ul{
+    list-style: none;
+}
+body{
+    display:flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background:blueviolet;
+}
+.wrapper{
+    background:#fff;
+    width:85%;
+    border-radius:10px;
+    padding:1.5rem;
+}
+.wrapper .content-box{
+    padding:1rem 1rem 0;
+    border:1px solid #aaa;
+    border-radius:10px;
+}
+.wrapper .typing-text{
+    max-height:12rem;
+    overflow-y: auto;
+}
+.wrapper .typing-text::-webkit-scrollbar{
+    width:0px;
+}
+.typing-text p{
+    font-size:1.3rem;
+    text-align: justify;
+    letter-spacing:1px;
+    word-break: break-all;
+}
+.content-box .content{
+    display:flex;
+    margin-top:1rem;
+    padding: 0.5rem; 
+    border-top:1px solid #aaa;
+    justify-content: space-between;
+}
+.content .result-details{
+    display: flex;
+    width:calc(100% - 140px);
+    align-items: center;
+    justify-content: space-between;
+}
+.result-details li{
+    height: 1.4rem;
+    display:flex;
+    align-items: center;
+}
+.result-details li:not(:first-child){
+    border-left:1px solid#aaa;
+    padding-left:1rem;
+}
+.result-details li p{
+    font-size:1.2rem;
+}
+.result-details li span{
+    margin-left:0.5rem;
+    display: block;
+    font-size: 1.3rem;
+}
+.result-details li:not(:first-child) span{
+    font-weight: 600;
+}
+.result-details li b{
+    font-weight: 500;
+}
+.content button{
+    color:#fff;
+    padding:0.5rem;
+    background-color: blueviolet;
+    border:none;
+    border-radius: 5px;
+    font-size:1.2rem;
+    cursor: pointer;
+    outline: none;
+    transition:scale 0.3s ease-in-out;
+}
+.content button:active{
+    scale:0.8;
+}
