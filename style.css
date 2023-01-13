@@ -39,7 +39,7 @@ body{
     word-break: break-all;
 }
 .typing-text p span.correct{
-    color:blueviolet;
+    color:#8400ff;
 }
 .typing-text p span.wrong{
     color:red;
