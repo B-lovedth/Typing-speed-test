@@ -43,6 +43,10 @@ body{
 }
 .typing-text p span.wrong{
     color:red;
+    background: #ff000033;
+    outline: 1px solid #fff;
+    border-radius: 5px;
+}
 }
 .content-box .content{
     display:flex;
