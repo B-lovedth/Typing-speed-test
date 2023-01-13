@@ -47,6 +47,9 @@ body{
     outline: 1px solid #fff;
     border-radius: 5px;
 }
+.typing-text p span.active{
+    transition: .3s ease-in-out;
+    text-decoration:1px underline #8400ff;
 }
 .content-box .content{
     display:flex;
