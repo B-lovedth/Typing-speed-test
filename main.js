@@ -19,6 +19,7 @@ inputField.oninput=()=>{
     if(typedChar == null){
         charIndex--
         characters[charIndex].classList.remove('wrong','correct')
+        characters[charIndex+1].classList.remove('active')
 
     }else{
         if(characters[charIndex].innerText.toLowerCase() === typedChar){
