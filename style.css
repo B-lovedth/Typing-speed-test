@@ -38,6 +38,12 @@ body{
     letter-spacing:1px;
     word-break: break-all;
 }
+.typing-text p span.correct{
+    color:blueviolet;
+}
+.typing-text p span.wrong{
+    color:red;
+}
 .content-box .content{
     display:flex;
     margin-top:1rem;
