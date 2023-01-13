@@ -16,5 +16,11 @@ randomParagraph();
 inputField.oninput=()=>{
     let typedChar = inputField.value.split("")[charIndex]
     const characters = typingText.querySelectorAll('span')
-    console.log(characters)
+    console.log(characters[charIndex])
+    if(characters[charIndex].innerText.toLowerCase() === typedChar){
+        characters[charIndex].classList.add('correct')
+    }else{
+        characters[charIndex].classList.add('wrong')
+    }
+    charIndex++
 }
