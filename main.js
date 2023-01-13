@@ -16,13 +16,19 @@ randomParagraph();
 inputField.oninput=()=>{
     let typedChar = inputField.value.split("")[charIndex]
     const characters = typingText.querySelectorAll('span')
-    console.log(characters[charIndex])
-    if(characters[charIndex].innerText.toLowerCase() === typedChar){
-        characters[charIndex].classList.add('correct')
+    if(typedChar == null){
+        charIndex--
+        characters[charIndex].classList.remove('wrong','correct')
+
     }else{
-        characters[charIndex].classList.add('wrong')
+        if(characters[charIndex].innerText.toLowerCase() === typedChar){
+            characters[charIndex].classList.add('correct')
+        }else{
+            characters[charIndex].classList.add('wrong')
+        }
+        charIndex++
     }
-    charIndex++
+    
     characters[charIndex].classList.add('active')
     characters[charIndex-1].classList.remove('active')
 }
