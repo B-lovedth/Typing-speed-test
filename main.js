@@ -1,5 +1,6 @@
 const typingText = document.querySelector(".typing-text p"),
   inputField = document.querySelector(".input-field");
+let charIndex = 0;
 
 function randomParagraph() {
   let randIndex = Math.floor(Math.random() * paragraphs.length);
@@ -13,6 +14,7 @@ function randomParagraph() {
 randomParagraph();
 
 inputField.oninput=()=>{
+    let typedChar = inputField.value.split("")[charIndex]
     const characters = typingText.querySelectorAll('span')
     console.log(characters)
 }
