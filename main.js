@@ -9,8 +9,8 @@ function randomParagraph() {
     typingText.innerHTML += spanTag;
   });
   document.addEventListener("keydown", () => inputField.focus());
-  document.addEventListener("click", () => inputField.focus());
-}
+  typingText.addEventListener("click", () => inputField.focus());
+} 
 randomParagraph();
 
 inputField.oninput=()=>{
@@ -23,4 +23,6 @@ inputField.oninput=()=>{
         characters[charIndex].classList.add('wrong')
     }
     charIndex++
+    characters[charIndex].classList.add('active')
+    characters[charIndex-1].classList.remove('active')
 }
