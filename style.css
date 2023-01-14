@@ -61,9 +61,7 @@ body{
     scale: 1;
     text-transform: uppercase;
     text-shadow: 4px 4px 5px #3a3a3a;
-}
-.typing-text h2:hover{
-    
+    animation: show 2s forwards;
 }
 .typing-text p{
     font-size:1.3rem;
@@ -74,6 +72,19 @@ body{
 .typing-text p.hide{
     filter: blur(3px);
     opacity: 0.8;
+    animation: hide 5s forwards;
+}
+@keyframes show {
+    to{
+        opacity: 0;
+        scale: 0;
+    }
+}
+@keyframes hide {
+    to{
+        filter: blur(0px);
+        opacity:1;
+    }
 }
 .typing-text p span{
     position:relative;
