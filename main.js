@@ -34,17 +34,24 @@ inputField.oninput = () => {
         } else {
           clearInterval(timer);
         }
-        characters[charIndex].classList.remove('wrong','correct')
-        characters[charIndex+1].classList.remove('active')
-
-    }else{
-        if(characters[charIndex].innerText.toLowerCase() === typedChar){
-            characters[charIndex].classList.add('correct')
-        }else{
-            characters[charIndex].classList.add('wrong')
-            mistakes++
-        }
-        charIndex++
+      }, 1000);
+      isTyping = true;
+    }
+    if (typedChar == null) {
+      charIndex--;
+      if (characters[charIndex].classList.contains("wrong")) {
+        mistakes--;
+      }
+      characters[charIndex].classList.remove("wrong", "correct");
+      characters[charIndex + 1].classList.remove("active");
+    } else {
+      if (characters[charIndex].innerText.toLowerCase() === typedChar) {
+        characters[charIndex].classList.add("correct");
+      } else {
+        characters[charIndex].classList.add("wrong");
+        mistakes++;
+      }
+      charIndex++;
     }
     
     characters[charIndex].classList.add('active')
