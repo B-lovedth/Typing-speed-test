@@ -13,6 +13,7 @@ body{
     align-items: center;
     justify-content: center;
     background:blueviolet;
+    position: relative;
 }
 .input-field{
     position:absolute;
@@ -21,8 +22,14 @@ body{
 .wrapper{
     background:#fff;
     width:85%;
+    position:absolute;
     border-radius:10px;
     padding:1.5rem;
+    transition: 0.5s ease-in-out;
+}
+.wrapper.done{
+    scale: 0.6;
+    opacity:0;
 }
 .wrapper .content-box{
     padding:1rem 1rem 0;
