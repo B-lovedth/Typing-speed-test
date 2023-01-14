@@ -19,7 +19,7 @@ function randomParagraph() {
   });
   document.addEventListener("keydown", () => inputField.focus());
   typingText.addEventListener("click", () => inputField.focus());
-} 
+}
 randomParagraph();
 
 
