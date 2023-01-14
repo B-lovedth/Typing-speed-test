@@ -8,7 +8,7 @@ const typingText = document.querySelector(".typing-text p"),
   h2Tag= document.querySelector('.typing-text h2')
 let charIndex = mistakes = 0;
 let timer,
-  maxTime = 60,
+  maxTime = 5,
 timeleft = maxTime,
 isTyping = false;
 
