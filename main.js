@@ -73,3 +73,17 @@ inputField.oninput = () => {
     // wrapperTag.classList.add('done')
   }
 };
+
+button.onclick=()=>{
+    randomParagraph()
+    clearInterval(timer)
+    timeleft = maxTime,
+    isTyping = false;
+    mistakes=0
+    mistakeTag.textContent = mistakes;
+    timeTag.textContent = timeleft;
+    cpmTag.textContent = 0
+    wpmTag.textContent = 0
+    charIndex=0 
+    inputField.readOnly=false;
+}
