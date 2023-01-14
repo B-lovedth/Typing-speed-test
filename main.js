@@ -4,19 +4,22 @@ const typingText = document.querySelector(".typing-text p"),
   timeTag = document.querySelector(".time span b"),
   wpmTag = document.querySelector(".wpm span"),
   cpmTag = document.querySelector(".cpm span"),
-  button = document.querySelector(".content button");
-let charIndex = (mistakes = 0);
+  button = document.querySelector(".content button"),
+  wrapperTag= document.querySelector('.wrapper')
+let charIndex = mistakes = 0;
 let timer,
-  maxTime = 60;
-timeleft = maxTime;
+  maxTime = 60,
+timeleft = maxTime,
 isTyping = false;
 
 function randomParagraph() {
-  let randIndex = Math.floor(Math.random() * paragraphs.length);
+    typingText.innerHTML = ''
+    let randIndex = Math.floor(Math.random() * paragraphs.length);
   paragraphs[randIndex].split("").forEach((span) => {
     let spanTag = `<span>${span}</span>`;
     typingText.innerHTML += spanTag;
   });
+  typingText.querySelectorAll("span")[0].classList.add('active')
   document.addEventListener("keydown", () => inputField.focus());
   typingText.addEventListener("click", () => inputField.focus());
 }
@@ -25,7 +28,7 @@ randomParagraph();
 inputField.oninput = () => {
   let typedChar = inputField.value.split("")[charIndex];
   const characters = typingText.querySelectorAll("span");
-  if (charIndex > characters.length - 1 && timeleft > 0) {
+  if (charIndex < characters.length - 1 && timeleft > 0) {
     if (!isTyping) {
       timer = setInterval(() => {
         if (timeleft > 0) {
@@ -62,5 +65,11 @@ inputField.oninput = () => {
     mistakeTag.textContent = mistakes;
     cpmTag.textContent = charIndex - mistakes;
     wpmTag.textContent = wpm;
+  }
+  else{
+    inputField.readOnly = true
+    console.log('time up')
+    inputField.value=''
+    // wrapperTag.classList.add('done')
   }
 };
