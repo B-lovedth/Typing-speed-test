@@ -53,8 +53,14 @@ inputField.oninput = () => {
       }
       charIndex++;
     }
-    
-    characters[charIndex].classList.add('active')
-    characters[charIndex-1].classList.remove('active')
-    mistakeTag.textContent = mistakes
-}
+    let wpm = Math.round(
+      ((charIndex - mistakes) / 5 / (maxTime - timeleft)) * 60
+    );
+    wpm = wpm < 0 || wpm === Infinity || !wpm ? 0 : wpm;
+    characters[charIndex].classList.add("active");
+    characters[charIndex - 1].classList.remove("active");
+    mistakeTag.textContent = mistakes;
+    cpmTag.textContent = charIndex - mistakes;
+    wpmTag.textContent = wpm;
+  }
+};
