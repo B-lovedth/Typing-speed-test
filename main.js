@@ -1,6 +1,7 @@
 const typingText = document.querySelector(".typing-text p"),
-  inputField = document.querySelector(".input-field");
-let charIndex = 0;
+  inputField = document.querySelector(".input-field"),
+  mistakeTag = document.querySelector(".mistake span")
+let charIndex = mistakes = 0;
 
 function randomParagraph() {
   let randIndex = Math.floor(Math.random() * paragraphs.length);
@@ -12,6 +13,7 @@ function randomParagraph() {
   typingText.addEventListener("click", () => inputField.focus());
 } 
 randomParagraph();
+
 
 inputField.oninput=()=>{
     let typedChar = inputField.value.split("")[charIndex]
@@ -26,6 +28,8 @@ inputField.oninput=()=>{
             characters[charIndex].classList.add('correct')
         }else{
             characters[charIndex].classList.add('wrong')
+            mistakes++
+            mistakeTag.textContent = mistakes
         }
         charIndex++
     }
