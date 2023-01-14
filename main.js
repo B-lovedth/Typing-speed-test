@@ -1,14 +1,15 @@
 const typingText = document.querySelector(".typing-text p"),
   inputField = document.querySelector(".input-field"),
   mistakeTag = document.querySelector(".mistake span"),
-  timeTag = document.querySelector('.time span b')
-let charIndex = mistakes = 0;
+  timeTag = document.querySelector(".time span b"),
+  wpmTag = document.querySelector(".wpm span"),
+  cpmTag = document.querySelector(".cpm span"),
+  button = document.querySelector(".content button");
+let charIndex = (mistakes = 0);
 let timer,
-maxTime = 60;
-timeleft=maxTime;
-isTyping = false
-
-
+  maxTime = 60;
+timeleft = maxTime;
+isTyping = false;
 
 function randomParagraph() {
   let randIndex = Math.floor(Math.random() * paragraphs.length);
