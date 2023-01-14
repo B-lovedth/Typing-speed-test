@@ -22,6 +22,17 @@ function randomParagraph() {
 }
 randomParagraph();
 
+inputField.oninput = () => {
+  let typedChar = inputField.value.split("")[charIndex];
+  const characters = typingText.querySelectorAll("span");
+  if (charIndex > characters.length - 1 && timeleft > 0) {
+    if (!isTyping) {
+      timer = setInterval(() => {
+        if (timeleft > 0) {
+          timeleft--;
+          timeTag.textContent = timeleft;
+        } else {
+          clearInterval(timer);
         }
         characters[charIndex].classList.remove('wrong','correct')
         characters[charIndex+1].classList.remove('active')
