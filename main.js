@@ -5,7 +5,7 @@ const typingText = document.querySelector(".typing-text p"),
   wpmTag = document.querySelector(".wpm span"),
   cpmTag = document.querySelector(".cpm span"),
   button = document.querySelector(".content button"),
-  wrapperTag= document.querySelector('.wrapper')
+  h2Tag= document.querySelector('.typing-text h2')
 let charIndex = mistakes = 0;
 let timer,
   maxTime = 60,
@@ -70,11 +70,14 @@ inputField.oninput = () => {
     inputField.readOnly = true
     console.log('time up')
     inputField.value=''
-    // wrapperTag.classList.add('done')
+    typingText.classList.add('hide')
+    h2Tag.classList.add('show')
   }
 };
 
 button.onclick=()=>{
+    typingText.classList.remove('hide')
+    h2Tag.classList.remove('show')
     randomParagraph()
     clearInterval(timer)
     timeleft = maxTime,
